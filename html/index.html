@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>搜狗百科-添加图片</title>
+    <meta name="description" content="百科是一部有着平等、协作、分享、自由理念的网络百科全书，为每一个互联网用户创造一个涵盖所有领域知识、服务的中文知识性平台。">
+    <meta name="keywords" content="搜搜百科，百科手机版，中文百科">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../css/sgbk_mobile_base.css">
+    <link rel="stylesheet" href="../css/sgbk_mobile_edit.css">
+    <script src="../js/zepto.js"></script>
+</head>
+<body>
+<img src="" id="temp" style="position:absolute;left:0,top:0;z-index:9999;background:#FFFFFF">
+<div class="edit">
+
+    <section class="mod-toolbar">
+    <a class="mod-btn-back" href="">词条</a>
+    <a href="javascript:void()" id="submit" class="mod-toolbar-right disabled"><span>裁切</span></a>
+</section>
+
+    <div class="edit-wrap">
+
+        <h2 class="edit-title">霍建华</h2>
+        
+        
+        <div class="edit-main edit-main-horizontal">
+
+            <div class="edit-box" id="clipbox">
+                <i class="edit-corner edit-left-top">左上角</i>
+                <i class="edit-corner edit-right-top">右上角</i>
+                <i class="edit-corner edit-left-bottom">左下角</i>
+                <i class="edit-corner edit-right-bottom">右下角</i>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <div class="edit-opr">
+        <div class="edit-local">
+            <input class="edit-upload" type="file" id="fileSelect">
+            <i class="icon-upload"></i>本地上传
+        </div>
+        <div class="edit-net"><i class="wid-search"></i>搜索上传</div>
+    </div>
+
+</div>
+<script type="text/javascript" src="../js/alloy_finger.js"></script>
+<script type="text/javascript" src="../js/transform.js"></script>
+<script type="text/javascript" src="../js/to.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+</body>
+</html>
