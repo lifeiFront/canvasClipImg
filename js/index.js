@@ -1,5 +1,5 @@
 (function($, undefined) {
-	function getQueryArgs() {
+	function getQueryArgs() {//获取链接后的查询字符串，与图片裁切无关代码
 		//取得查询字符串并去掉开头的问号，location.search返回?以后的字符串
 		var qs = (location.search.length > 0 ? location.search.substring(1) : ""),
 			args = {},
@@ -21,7 +21,7 @@
 		}
 		return args;
 	};
-	if (getQueryArgs().dev == 'weinre') {
+	if (getQueryArgs().dev == 'weinre') {//用weinre工具在移动端进行调试，与图片裁切无关代码
 		(function(e) {
 			e.setAttribute("src", "http://10.129.232.130:8686/target/target-script-min.js#anonymous");
 			document.getElementsByTagName("body")[0].appendChild(e);
@@ -36,7 +36,7 @@
 	 * 搜索上传会涉及跨域问题，解决方案：1、将网络图片后台获取到自己的服务器。2、在图片服务器设置允许本网站跨域
 	 * 上传的原理基本相同，本示例只介绍本地图片预览上传
 	 * 注意点：1、只需要关注位移，并非图片左上角的坐标，而是图片左右上下滑动的距离，后面缩放会将图片正常话
-	 * 		   2、图片初始时左上角与裁剪框对齐
+	 * 		   2、图片初始时左上角与裁剪框对齐（方便计算初始偏移量值）
 	 * 		   3、图片旋转始终以图片中心做旋转，以图片中心点计算图片旋转是的左上角偏移量。（以其他点旋转也可以，但要始终以同一个点，不然计算偏移量很麻烦）
 	 * 		   4、图片缩放已图片左上角为中心缩放，旋转后的缩放也要以原始左上角缩放。（通过控制图片宽高可以实现始终以原始左上角做缩放）（以其他点缩放要始终保持一个点，不然偏移量计算会有问题）
 	 */
