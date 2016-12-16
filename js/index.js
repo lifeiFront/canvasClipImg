@@ -112,6 +112,45 @@
 			context.drawImage(_this.imgObj, 0, 0, _this.naturalWidth * _this.initScale, _this.naturalHeight * _this.initScale);
 			//预览裁切后的图像
 			$('#temp')[0].src = canvas.toDataURL();
+// 			if (!HTMLCanvasElement.prototype.toBlob) {//不不支持toBlob方法的浏览器做兼容处理
+// 				Object.defineProperty(HTMLCanvasElement.prototype, 'toBlob', {
+// 				    value: function (callback, type, quality) {
+
+// 					var binStr = atob( this.toDataURL(type, quality).split(',')[1] ),
+// 					    len = binStr.length,
+// 					    arr = new Uint8Array(len);
+
+// 					for (var i=0; i<len; i++ ) {
+// 					 arr[i] = binStr.charCodeAt(i);
+// 					}
+
+// 					let img;
+// 					try{
+// 					    img = new Blob( [arr], {type: type || 'image/png'});
+// 					}
+// 					catch(e){
+// 					    // TypeError old chrome and FF  或者老版本的uc
+// 					    window.BlobBuilder = window.BlobBuilder || 
+// 								 window.WebKitBlobBuilder || 
+// 								 window.MozBlobBuilder || 
+// 								 window.MSBlobBuilder;
+// 					    if(e.name == 'TypeError' && window.BlobBuilder){
+// 						let bb = new BlobBuilder();
+// 						bb.append(arr.buffer);
+// 						img = bb.getBlob(type || 'image/png');
+// 					    }
+// 					    else if(e.name == "InvalidStateError"){
+// 						// InvalidStateError (tested on FF13 WinXP)
+// 						img = new Blob( [arr.buffer], {type : type || 'image/png'});
+// 					    }
+// 					    else{
+// 						// We're screwed, blob constructor unsupported entirely   
+// 					    }
+// 					}
+// 					callback(img);
+// 				    }
+// 				});
+// 			    }
 			// 将canvas裁切的图片已大对象的形式通过异步请求传给后台保存
 			// canvas.toBlob(function(blob){
 			//     var formData = new FormData();
